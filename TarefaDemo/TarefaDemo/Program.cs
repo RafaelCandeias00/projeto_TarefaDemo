@@ -1,8 +1,11 @@
+using TarefaDemo.Endpoints;
 using TarefaDemo.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.AddPersistence();
+
 var app = builder.Build();
 
-builder.AddPersistence();
+app.MapTarefasEndpoints();
 
 app.Run();
